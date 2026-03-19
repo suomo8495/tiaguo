@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泰国亲子8日游行程规划</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        
+        .header { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 40px; text-align: center; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        
+        .info-bar { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; padding: 20px; background: #f8f9fa; }
+        .info-item { display: flex; align-items: center; gap: 8px; }
+        .info-item span { color: #f5576c; font-weight: bold; }
+        
+        .tab-nav { display: flex; background: #f8f9fa; border-bottom: 2px solid #eee; }
+        .tab-btn { flex: 1; padding: 18px 20px; border: none; background: none; font-size: 1.1em; font-weight: 600; color: #666; cursor: pointer; transition: all 0.3s; position: relative; }
+        .tab-btn:hover { background: #fff5f5; color: #f5576c; }
+        .tab-btn.active { color: #f5576c; background: white; }
+        .tab-btn.active::after { content: ""; position: absolute; bottom: -2px; left: 0; right: 0; height: 3px; background: #f5576c; }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        .section { padding: 30px 40px; border-bottom: 1px solid #eee; }
+        .section-title { font-size: 1.8em; color: #333; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .section-title::before { content: ""; width: 5px; height: 30px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 3px; }
+        
+        .flight-card { background: #f8f9fa; border-radius: 15px; padding: 25px; margin-bottom: 20px; border-left: 5px solid #f5576c; }
+        .flight-card h3 { color: #333; margin-bottom: 15px; }
+        .flight-route { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .flight-point { text-align: center; }
+        .flight-point .time { font-size: 1.5em; font-weight: bold; color: #333; }
+        .flight-point .airport { color: #666; }
+        .flight-arrow { color: #f5576c; font-size: 1.5em; }
+        
+        .hotel-card { display: flex; gap: 20px; background: #fff5f5; border-radius: 15px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .hotel-img { width: 300px; height: 220px; object-fit: cover; background: #ddd; }
+        .hotel-info { padding: 20px; flex: 1; }
+        .hotel-name { font-size: 1.4em; color: #333; margin-bottom: 10px; font-weight: bold; }
+        .hotel-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+        .hotel-tag { background: #f5576c; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; }
+        .hotel-desc { color: #666; line-height: 1.6; }
+        .hotel-links { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+        .hotel-link { display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px; background: #fff; color: #f5576c; text-decoration: none; border: 1px solid #f8b3be; font-size: 0.9em; font-weight: 600; }
+        .hotel-link:hover { background: #f5576c; color: white; }
+        
+        .spotlight { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px; }
+        .spot-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .spot-img { width: 100%; height: 180px; object-fit: cover; background: #ddd; }
+        .spot-info { padding: 15px; }
+        .spot-name { font-weight: bold; color: #333; margin-bottom: 5px; }
+        .spot-desc { color: #666; font-size: 0.9em; }
+        .spot-link-row { margin-top: 10px; }
+        .spot-link-row a { display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; background: #fff2e8; color: #e86b2f; text-decoration: none; font-size: 0.82em; font-weight: 600; }
+        .spot-link-row a:hover { background: #e86b2f; color: white; }
+        
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ""; position: absolute; left: 8px; top: 0; bottom: 0; width: 3px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .timeline-item { position: relative; margin-bottom: 30px; }
+        .timeline-item::before { content: ""; position: absolute; left: -26px; top: 5px; width: 15px; height: 15px; background: #f5576c; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 3px #f5576c; }
+        .day-title { font-size: 1.3em; color: #333; margin-bottom: 10px; font-weight: bold; }
+        .day-content { background: #f8f9fa; padding: 20px; border-radius: 10px; }
+        .activity { display: flex; gap: 15px; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #ddd; }
+        .activity:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .activity-time { background: #f5576c; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; white-space: nowrap; height: fit-content; }
+        .activity-info { flex: 1; }
+        .activity-name { font-weight: bold; color: #333; margin-bottom: 5px; }
+        .activity-desc { color: #666; font-size: 0.95em; }
+        
+        .tips { background: #fff5f5; border-radius: 15px; padding: 25px; margin-bottom: 15px; }
+        .tips h3 { color: #f5576c; margin-bottom: 15px; }
+        .tips ul { list-style: none; }
+        .tips li { padding: 8px 0; color: #666; display: flex; align-items: flex-start; gap: 10px; }
+        .tips li::before { content: "✓"; color: #f5576c; font-weight: bold; }
+        
+        .warning { background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 10px; padding: 15px 20px; margin-bottom: 15px; }
+        .warning-title { color: #e65100; font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .warning ul { margin: 0; padding-left: 20px; }
+        .warning li { color: #666; font-size: 0.95em; }
+        
+        .transport-card { background: #e8f5e9; border-radius: 15px; padding: 20px; margin-bottom: 15px; }
+        .transport-card h4 { color: #2e7d32; margin-bottom: 10px; }
+        .transport-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #c8e6c9; }
+        .transport-item:last-child { border-bottom: none; }
+        .transport-name { color: #333; }
+        .transport-price { color: #f5576c; font-weight: bold; }
+        
+        .footer { background: #333; color: white; padding: 20px; text-align: center; }
+        
+        @media (max-width: 768px) {
+            .hotel-card { flex-direction: column; }
+            .hotel-img { width: 100%; height: 200px; }
+            .flight-route { flex-direction: column; }
+            .flight-arrow { transform: rotate(90deg); }
+            .tab-nav { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇹🇭 泰国亲子8日游</h1>
+            <p>绍兴出发 · 1岁宝宝 + 两位57岁妈妈</p>
+            <p>📅 出发日期：2025年4月15日</p>
+        </div>
+        
+        <div class="info-bar">
+            <div class="info-item">👶 <span>1岁婴幼儿</span> - 需携带婴儿推车</div>
+            <div class="info-item">👵 <span>57岁老人</span> - 避免过度劳累</div>
+            <div class="info-item">✈️ <span>非红眼航班</span> - 舒适第一</div>
+            <div class="info-item">🏨 <span>亲子酒店</span> - 设施完善</div>
+        </div>
+
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="openTab('phuket')">🏝️ 普吉岛</button>
+            <button class="tab-btn" onclick="openTab('samed')">🏖️ 沙美岛</button>
+            <button class="tab-btn" onclick="openTab('kohsum')">🌴 苏梅岛</button>
+        </div>
+
+        <!-- 普吉岛行程 -->
+        <div id="phuket" class="tab-content active">
+            <div class="section">
+                <h2 class="section-title">✈️ 普吉岛 - 航班安排</h2>
+                <div class="flight-card">
+                    <h3>去程 - 4月15日</h3>
+                    <div class="flight-route">
+                        <div class="flight-point"><div class="time">13:50</div><div class="airport">杭州萧山(HGH)</div></div>
+                        <div class="flight-arrow">✈️</div>
+                        <div class="flight-point"><div class="time">17:20</div><div class="airport">曼谷素万那普(BKK)</div></div>
+                    </div>
+                    <p style="margin-top:15px; color:#666;">🚗 绍兴→杭州约1小时车程，建议提前2小时到达机场</p>
+                </div>
+                <div class="flight-card">
+                    <h3>曼谷→普吉岛 转机</h3>
+                    <div class="flight-route">
+                        <div class="flight-point"><div class="time">19:30</div><div class="airport">曼谷素万那普(BKK)</div></div>
+                        <div class="flight-arrow">✈️</div>
+                        <div class="flight-point"><div class="time">20:50</div><div class="airport">普吉岛(HKT)</div></div>
+                    </div>
+                </div>
+                <div class="flight-card">
+                    <h3>回程 - 4月22日</h3>
+                    <div class="flight-route">
+                        <div class="flight-point"><div class="time">10:00</div><div class="airport">普吉岛(HKT)</div></div>
+                        <div class="flight-arrow">✈️</div>
+                        <div class="flight-point"><div class="time">11:20</div><div class="airport">曼谷素万那普(BKK)</div></div>
+                    </div>
+                    <div class="flight-route" style="margin-top:20px;">
+                        <div class="flight-point"><div class="time">13:30</div><div class="airport">曼谷素万那普(BKK)</div></div>
+                        <div class="flight-arrow">✈️</div>
+                        <div class="flight-point"><div class="time">18:30</div><div class="airport">杭州萧山(HGH)</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🏨 普吉岛 - 推荐酒店</h2>
+                <div class="warning">
+                    <div class="warning-title">⚠️ 选酒店注意事项</div>
+                    <ul>
+                        <li>4月是泰国旺季，酒店价格波动大，建议提前2周预订</li>
+                        <li>带1岁宝宝务必确认酒店提供婴儿床、儿童泳池</li>
+                        <li>卡塔海滩比芭东海滩更适合亲子，沙质更细腻</li>
+                    </ul>
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-info">
+                        <div class="hotel-name">卡塔海滩度假村 (Kata Beach Resort)</div>
+                        <div class="hotel-tags"><span class="hotel-tag">亲子首选</span><span class="hotel-tag">海滩步行2分钟</span><span class="hotel-tag">儿童泳池</span></div>
+                        <div class="hotel-desc">✅ 位置：卡塔海滩旁，安静适合休养<br>✅ 设施：儿童俱乐部、婴儿泳池、Family Room<br>💰 预算：约600-1000元/晚</div>
+                        <div class="hotel-links">
+                            <a class="hotel-link" href="https://www.qunar.com/" target="_blank">去哪儿搜索</a>
+                            <a class="hotel-link" href="https://www.agoda.com/zh-cn/search?city=17166&textToSearch=Kata%20Beach%20Resort" target="_blank">Agoda</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-info">
+                        <div class="hotel-name">希尔顿阿卡狄亚度假村 (Hilton Phuket Arcadia)</div>
+                        <div class="hotel-tags"><span class="hotel-tag">五星豪华</span><span class="hotel-tag">私人海滩</span><span class="hotel-tag">中文服务</span></div>
+                        <div class="hotel-desc">✅ 位置：卡隆海滩，园林式度假村<br>✅ 设施：3个泳池、SPA、儿童活动中心<br>💰 预算：约800-1500元/晚</div>
+                        <div class="hotel-links">
+                            <a class="hotel-link" href="https://www.qunar.com/" target="_blank">去哪儿搜索</a>
+                            <a class="hotel-link" href="https://www.agoda.com/zh-cn/search?city=17166&textToSearch=Hilton%20Phuket%20Arcadia" target="_blank">Agoda</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🏝️ 普吉岛 - 推荐景点</h2>
+                <div class="warning">
+                    <div class="warning-title">⚠️ 出海注意事项</div>
+                    <ul>
+                        <li>1岁宝宝和57岁老人建议选择大船或双体帆船，避免快艇颠簸</li>
+                        <li>皇帝岛比皮皮岛更近(30分钟)，更适合亲子</li>
+                        <li>4月浪较小，是出海好时机，但务必涂防晒</li>
+                    </ul>
+                </div>
+                <div class="spotlight">
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏖️ 卡塔海滩</div>
+                            <div class="spot-desc">沙质细腻，海浪平静，适合老人和小孩 | 👶推荐</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E5%8D%A1%E5%A1%94%E6%B5%B7%E6%BB%A9" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏖️ 芭东海滩</div>
+                            <div class="spot-desc">最热闹，配套完善，购物餐饮方便</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E8%8A%AD%E4%B8%9C%E6%B5%B7%E6%BB%A9" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏝️ 皮皮岛</div>
+                            <div class="spot-desc">玛雅湾取景地，玻璃海水 | ⚠️船程较远</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E7%9A%AE%E7%9A%AE%E5%B2%9B" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏝️ 皇帝岛</div>
+                            <div class="spot-desc">离普吉最近30分钟，水质清澈 | 👶推荐</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E7%9A%87%E5%B8%9D%E5%B2%9B" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spotlight" style="margin-top:20px;">
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🛕 查龙寺</div>
+                            <div class="spot-desc">普吉岛代表性寺庙，适合安排半天市区轻松行程</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E6%9F%A5%E9%BE%99%E5%AF%BA" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏘️ 普吉镇老街</div>
+                            <div class="spot-desc">彩色中葡骑楼很出片，白天逛街和喝咖啡都舒服</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E6%99%AE%E5%90%89%E9%95%87%E8%80%81%E8%A1%97" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🛍️ 江西冷商场</div>
+                            <div class="spot-desc">芭东核心商圈，适合午间避暑、补给宝宝用品和吃饭</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E6%B1%9F%E8%A5%BF%E5%86%B7%E5%95%86%E5%9C%BA" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🚕 普吉岛 - 交通指南</h2>
+                <div class="transport-card">
+                    <h4>🚕 出行方式</h4>
+                    <div class="transport-item"><span class="transport-name">Grab（推荐）</span><span class="transport-price">可现金/支付宝，约200-500泰铢</span></div>
+                    <div class="transport-item"><span class="transport-name">突突车</span><span class="transport-price">短途200-300泰铢，需砍价</span></div>
+                    <div class="transport-item"><span class="transport-name">包车一日游</span><span class="transport-price">约1500-2500泰铢/天</span></div>
+                    <div class="transport-item"><span class="transport-name">Bolt / InDrive</span><span class="transport-price">有时比 Grab 更便宜，现场看哪个有单</span></div>
+                </div>
+                <div class="transport-card">
+                    <h4>✈️ 机场接送</h4>
+                    <div class="transport-item"><span class="transport-name">普吉机场→卡塔海滩</span><span class="transport-price">约600-800泰铢（约1小时）</span></div>
+                    <div class="transport-item"><span class="transport-name">提前预约接机（推荐）</span><span class="transport-price">约300-500元/车，适合带娃和老人</span></div>
+                    <div class="transport-item"><span class="transport-name">儿童安全座椅</span><span class="transport-price">如需要，预订时一定备注，不是每辆车都有</span></div>
+                </div>
+                <div class="transport-card">
+                    <h4>🚤 出海与码头</h4>
+                    <div class="transport-item"><span class="transport-name">查龙码头 Chalong Pier</span><span class="transport-price">去皇帝岛、珊瑚岛、皮皮岛最常用</span></div>
+                    <div class="transport-item"><span class="transport-name">皇帝岛 / 珊瑚岛</span><span class="transport-price">更适合亲子和老人，船程相对短</span></div>
+                    <div class="transport-item"><span class="transport-name">皮皮岛</span><span class="transport-price">风景很好，但往返时间更长，宝宝午睡要预留</span></div>
+                    <div class="transport-item"><span class="transport-name">包船建议</span><span class="transport-price">优先双体帆船或大船，少选小快艇</span></div>
+                </div>
+                <div class="transport-card">
+                    <h4>👪 家庭出行补充</h4>
+                    <div class="transport-item"><span class="transport-name">婴儿车使用</span><span class="transport-price">商场和酒店好推，老街和海边木栈道需折叠收车</span></div>
+                    <div class="transport-item"><span class="transport-name">午间安排</span><span class="transport-price">11:30-15:00 尽量放在商场、酒店或车内，避开暴晒</span></div>
+                    <div class="transport-item"><span class="transport-name">支付方式</span><span class="transport-price">泰铢现金+支付宝并用，小摊和司机多收现金</span></div>
+                    <div class="transport-item"><span class="transport-name">电话卡 / 网络</span><span class="transport-price">机场或国内提前买 eSIM，方便叫车和联系船公司</span></div>
+                </div>
+                <div class="warning" style="margin-top:20px;">
+                    <div class="warning-title">⚠️ 交通补充建议</div>
+                    <ul>
+                        <li>普吉岛堵车比想象中严重，卡塔去芭东、普吉镇都要预留 20-30 分钟机动时间</li>
+                        <li>带老人和宝宝尽量减少一天换多个点，上午一个主景点、下午一个轻松点最舒服</li>
+                        <li>出海日建议准备晕船药、防晒衣、防水袋、宝宝替换衣物和小零食</li>
+                        <li>酒店前台代叫车通常更稳，尤其晚间回程和下雨时比路边拦车省心</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🍜 普吉岛 - 当地特色美食</h2>
+                <div class="tips">
+                    <h3>推荐优先尝试</h3>
+                    <ul>
+                        <li><strong>冬阴功汤：</strong> 泰国代表菜，酸辣开胃；带老人和宝宝建议点微辣版</li>
+                        <li><strong>菠萝炒饭：</strong> 普遍接受度高，适合家庭共享，宝宝也更容易接受</li>
+                        <li><strong>泰式海鲜烧烤：</strong> 普吉很适合吃虾、鱿鱼、鱼类，注意选择熟透现烤的店</li>
+                        <li><strong>芒果糯米饭：</strong> 甜口经典甜品，适合作为下午茶或饭后小点</li>
+                        <li><strong>普吉福建面：</strong> 普吉镇比较有代表性的本地面食，适合安排在老街日尝试</li>
+                    </ul>
+                </div>
+                <div class="tips" style="margin-top:20px;">
+                    <h3>📍 推荐觅食区域</h3>
+                    <ul>
+                        <li><strong>普吉镇老街：</strong> 适合吃普吉福建面、咖喱蟹、本地甜品，也最有街区氛围</li>
+                        <li><strong>芭东 / 江西冷附近：</strong> 适合找空调餐厅、商场美食区，带宝宝和老人更省心</li>
+                        <li><strong>卡塔 / 卡隆海滩：</strong> 适合海景晚餐、海鲜烧烤和家庭聚餐</li>
+                        <li><strong>夜市区域：</strong> 适合尝试小吃和饮品，但建议早点去，避开过挤过晚时段</li>
+                    </ul>
+                </div>
+                <div class="tips" style="margin-top:20px;">
+                    <h3>👶 适合宝宝 / 长辈的点单清单</h3>
+                    <ul>
+                        <li>菠萝炒饭、海鲜炒饭、鸡肉炒饭</li>
+                        <li>椰子鸡汤、清汤米粉、蒸鱼</li>
+                        <li>烤鸡肉串、烤猪颈肉（少辣版）</li>
+                        <li>芒果糯米饭、香蕉煎饼、常温椰子水</li>
+                    </ul>
+                </div>
+                <div class="warning" style="margin-top:20px;">
+                    <div class="warning-title">🍽️ 点餐建议</div>
+                    <ul>
+                        <li>第一天先少吃生冷和超辣海鲜，让肠胃先适应气候</li>
+                        <li>带宝宝优先选有空调、座位宽松、出餐较快的餐厅或商场美食区</li>
+                        <li>如果担心辣度，点餐时可直接说 less spicy / no spicy</li>
+                        <li>夜市和海鲜排档更有氛围，但老人和小孩更适合早点去，避开太晚和太挤</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🗓️ 普吉岛 - 详细行程</h2>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="day-title">📅 第1天（4月15日）- 出发日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">绍兴 → 杭州萧山机场</div><div class="activity-desc">约1小时车程，建议预约送机</div></div></div>
+                        <div class="activity"><div class="activity-time">13:50</div><div class="activity-info"><div class="activity-name">杭州 → 曼谷</div><div class="activity-desc">飞行约4.5小时，泰国时间慢1小时</div></div></div>
+                        <div class="activity"><div class="activity-time">19:30</div><div class="activity-info"><div class="activity-name">曼谷 → 普吉岛</div><div class="activity-desc">飞行约1.5小时</div></div></div>
+                        <div class="activity"><div class="activity-time">晚上</div><div class="activity-info"><div class="activity-name">入住卡塔海滩酒店</div><div class="activity-desc">休息调整</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第2天（4月16日）- 休闲适应日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">卡塔海滩休闲</div><div class="activity-desc">轻松活动，适应环境</div></div></div>
+                        <div class="activity"><div class="activity-time">中午</div><div class="activity-info"><div class="activity-name">回酒店午睡 / 吃午餐</div><div class="activity-desc">宝宝和长辈都建议避开最晒时段</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">卡塔海滩 + 泳池</div><div class="activity-desc">老人小孩玩水，控制在 2-3 小时内更轻松</div></div></div>
+                        <div class="activity"><div class="activity-time">傍晚</div><div class="activity-info"><div class="activity-name">卡塔日落</div><div class="activity-desc">欣赏美丽日落 📸</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第3天（4月17日）- 芭东海滩</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">芭东海滩</div><div class="activity-desc">普吉岛最热闹海滩</div></div></div>
+                        <div class="activity"><div class="activity-time">中午</div><div class="activity-info"><div class="activity-name">江西冷商场午餐</div><div class="activity-desc">美食广场，有空调</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">商场购物</div><div class="activity-desc">购买伴手礼、宝宝用品，顺便在空调环境休息</div></div></div>
+                        <div class="activity"><div class="activity-time">晚上</div><div class="activity-info"><div class="activity-name">泰式按摩</div><div class="activity-desc">老人适合轻力度 💆</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第4天（4月18日）- 皮皮岛一日游</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">皮皮岛一日游</div><div class="activity-desc">⚠️建议选大船，减少颠簸；如果前一晚休息不足可改成皇帝岛</div></div></div>
+                        <div class="activity"><div class="activity-time">中午</div><div class="activity-info"><div class="activity-name">玛雅湾午餐</div><div class="activity-desc">岛上简餐</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">浮潜 / 沙滩</div><div class="activity-desc">老人岸边休息，宝宝玩沙</div></div></div>
+                        <div class="activity"><div class="activity-time">傍晚</div><div class="activity-info"><div class="activity-name">返回酒店</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第5天（4月19日）- 皇帝岛（推荐）</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">皇帝岛一日游 👶推荐</div><div class="activity-desc">比皮皮岛近30分钟，更轻松</div></div></div>
+                        <div class="activity"><div class="activity-time">全天</div><div class="activity-info"><div class="activity-name">沙滩休闲 + 浮潜</div><div class="activity-desc">沙质细腻，适合老人小孩</div></div></div>
+                        <div class="activity"><div class="activity-time">傍晚</div><div class="activity-info"><div class="activity-name">返回酒店</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第6天（4月20日）- 普吉镇 + 查龙寺</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">查龙寺</div><div class="activity-desc">普吉岛最大寺庙，体验佛教文化，建议穿着得体便于进入寺庙</div></div></div>
+                        <div class="activity"><div class="activity-time">中午</div><div class="activity-info"><div class="activity-name">普吉镇午餐</div><div class="activity-desc">建议选有空调餐厅，给宝宝和长辈补水休息</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">普吉镇老街</div><div class="activity-desc">拍照打卡，逛特色小店，16:00 后光线更柔和</div></div></div>
+                        <div class="activity"><div class="activity-time">傍晚</div><div class="activity-info"><div class="activity-name">返回海滩</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第7天（4月21日）- 曼谷返程日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">酒店休闲</div><div class="activity-desc">整理行李，最后泳池时光</div></div></div>
+                        <div class="activity"><div class="activity-time">10:00</div><div class="activity-info"><div class="activity-name">普吉岛 → 曼谷</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">王权免税店 / Central World</div><div class="activity-desc">购物为主，避免再安排远距离景点</div></div></div>
+                        <div class="activity"><div class="activity-time">晚上</div><div class="activity-info"><div class="activity-name">机场附近酒店入住</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第8天（4月22日）- 返程日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">曼谷机场</div></div></div>
+                        <div class="activity"><div class="activity-time">13:30</div><div class="activity-info"><div class="activity-name">曼谷 → 杭州</div></div></div>
+                        <div class="activity"><div class="activity-time">晚上</div><div class="activity-info"><div class="activity-name">杭州 → 绍兴</div><div class="activity-desc">回家！🎉</div></div></div>
+                    </div></div>
+                </div>
+                <div class="warning" style="margin-top:20px;">
+                    <div class="warning-title">✅ 普吉行程优化建议</div>
+                    <ul>
+                        <li>第 4 天游皮皮岛、第 5 天游皇帝岛连续两天出海会有点累，可二选一，空出来一天放在酒店休整或普吉镇慢逛</li>
+                        <li>如果宝宝午睡比较固定，建议把每天 12:00-15:00 作为固定休息时间，不安排暴晒景点</li>
+                        <li>普吉镇老街和江西冷都更适合放在下午，既能避暑，也方便顺路吃饭和补给</li>
+                        <li>带老人时，按摩、寺庙、老街这些轻松行程穿插在出海日之间，整体体验会明显更舒服</li>
+                    </ul>
+                </div>
+                <div class="tips" style="margin-top:20px;">
+                    <h3>🎒 普吉行程随身建议</h3>
+                    <ul>
+                        <li>海边每天准备：防晒霜、防晒帽、薄外套、驱蚊液、湿巾、拖鞋</li>
+                        <li>宝宝额外准备：至少 1 套替换衣物、尿不湿、奶粉零食、小毯子、防水袋</li>
+                        <li>老人额外准备：常用药、晕船药、轻便折叠伞、可随时补糖的小零食</li>
+                        <li>餐饮上尽量选择熟食和瓶装水，海鲜第一天不要吃太刺激，先适应气候</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 沙美岛行程 -->
+        <div id="samed" class="tab-content">
+            <div class="section">
+                <h2 class="section-title">✈️ 沙美岛 - 航班安排</h2>
+                <div class="flight-card">
+                    <h3>去程 - 4月15日</h3>
+                    <div class="flight-route">
+                        <div class="flight-point"><div class="time">13:50</div><div class="airport">杭州萧山(HGH)</div></div>
+                        <div class="flight-arrow">✈️</div>
+                        <div class="flight-point"><div class="time">17:20</div><div class="airport">曼谷素万那普(BKK)</div></div>
+                    </div>
+                </div>
+                <div class="flight-card">
+                    <h3>曼谷→罗勇府 - 接驳</h3>
+                    <div class="flight-route">
+                        <div class="flight-point"><div class="time">18:30</div><div class="airport">曼谷素万那普机场</div></div>
+                        <div class="flight-arrow">🚗</div>
+                        <div class="flight-point"><div class="time">20:00</div><div class="airport">罗勇府码头</div></div>
+                    </div>
+                    <p style="margin-top:15px; color:#666;">约1.5小时车程到罗勇府码头，后乘船15分钟到沙美岛</p>
+                </div>
+                <div class="flight-card">
+                    <h3>回程 - 4月22日</h3>
+                    <div class="flight-route">
+                        <div class="flight-point"><div class="time">上午</div><div class="airport">沙美岛码头</div></div>
+                        <div class="flight-arrow">🚗</div>
+                        <div class="flight-point"><div class="time">12:00</div><div class="airport">曼谷素万那普机场</div></div>
+                    </div>
+                    <div class="flight-route" style="margin-top:20px;">
+                        <div class="flight-point"><div class="time">13:30</div><div class="airport">曼谷素万那普(BKK)</div></div>
+                        <div class="flight-arrow">✈️</div>
+                        <div class="flight-point"><div class="time">18:30</div><div class="airport">杭州萧山(HGH)</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🏨 沙美岛 - 推荐酒店</h2>
+                <div class="warning">
+                    <div class="warning-title">⚠️ 选酒店注意事项</div>
+                    <ul>
+                        <li>沙美岛较小，酒店多为度假村形式，设施相对简单</li>
+                        <li>建议选择靠近主码头或日落海滩的酒店，出行方便</li>
+                        <li>4月旺季提前预订，带宝宝建议选有泳池的酒店</li>
+                    </ul>
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-info">
+                        <div class="hotel-name">沙美岛阿玛瑞度假村 (Samed Ao Phrao Resort)</div>
+                        <div class="hotel-tags"><span class="hotel-tag">海滨度假</span><span class="hotel-tag">私人沙滩</span><span class="hotel-tag">适合家庭</span></div>
+                        <div class="hotel-desc">✅ 位置：岛西侧日落海滩<br>✅ 设施：泳池、SPA、餐厅<br>💰 预算：约500-900元/晚</div>
+                        <div class="hotel-links">
+                            <a class="hotel-link" href="https://www.qunar.com/" target="_blank">去哪儿搜索</a>
+                            <a class="hotel-link" href="https://www.agoda.com/zh-cn/search?city=10646&textToSearch=Samed%20Ao%20Phrao%20Resort" target="_blank">Agoda</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-info">
+                        <div class="hotel-name">汪德暖度假村 (Vongdeuan Resort)</div>
+                        <div class="hotel-tags"><span class="hotel-tag">亲子推荐</span><span class="hotel-tag">儿童设施</span><span class="hotel-tag">高性价比</span></div>
+                        <div class="hotel-desc">✅ 位置：旺德暖海滩<br>✅ 设施：儿童泳池、家庭房<br>💰 预算：约400-700元/晚</div>
+                        <div class="hotel-links">
+                            <a class="hotel-link" href="https://www.qunar.com/" target="_blank">去哪儿搜索</a>
+                            <a class="hotel-link" href="https://www.agoda.com/zh-cn/search?city=10646&textToSearch=Vongdeuan%20Resort" target="_blank">Agoda</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🏝️ 沙美岛 - 推荐景点</h2>
+                <div class="warning">
+                    <div class="warning-title">⚠️ 游玩注意事项</div>
+                    <ul>
+                        <li>沙美岛离岛近，跳岛游很方便，但4月人较多</li>
+                        <li>老人小孩适合在主岛活动，无需长距离乘船</li>
+                        <li>码头往返需坐船，建议提前预约包车含船票</li>
+                    </ul>
+                </div>
+                <div class="spotlight">
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏖️ 日落海滩</div>
+                            <div class="spot-desc">沙质最细腻，适合看日落 | 👶推荐</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E6%B2%99%E7%BE%8E%E5%B2%9B%20Ao%20Phrao" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏖️ 旺德暖海滩</div>
+                            <div class="spot-desc">最热闹，餐厅酒吧众多</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=Vongdeuan%20Beach" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏝️ 外岛跳岛</div>
+                            <div class="spot-desc">水清人少，适合浮潜</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E6%B2%99%E7%BE%8E%E5%B2%9B%20%E8%B7%B3%E5%B2%9B" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏘️ 沙美镇</div>
+                            <div class="spot-desc">岛上主街，餐饮购物</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E6%B2%99%E7%BE%8E%E5%B2%9B%E9%95%87" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🚕 沙美岛 - 交通指南</h2>
+                <div class="transport-card">
+                    <h4>🚗 到达方式</h4>
+                    <div class="transport-item"><span class="transport-name">曼谷机场→罗勇码头</span><span class="transport-price">约1.5小时车程</span></div>
+                    <div class="transport-item"><span class="transport-name">罗勇码头→沙美岛</span><span class="transport-price">快艇15分钟/大船30分钟</span></div>
+                    <div class="transport-item"><span class="transport-name">包车送机+船票（推荐）</span><span class="transport-price">约2500-3500泰铢/家庭</span></div>
+                    <div class="transport-item"><span class="transport-name">娜丹码头 Ban Phe</span><span class="transport-price">主码头上下船，旺季排队需预留时间</span></div>
+                </div>
+                <div class="transport-card">
+                    <h4>🚤 岛上交通</h4>
+                    <div class="transport-item"><span class="transport-name">长尾船</span><span class="transport-price">包船500-1000泰铢</span></div>
+                    <div class="transport-item"><span class="transport-name">双条车 / 皮卡车</span><span class="transport-price">岛上短途常见，适合酒店和主街之间往返</span></div>
+                    <div class="transport-item"><span class="transport-name">摩托车租赁</span><span class="transport-price">约200-300泰铢/天，不太适合带宝宝家庭</span></div>
+                </div>
+                <div class="transport-card">
+                    <h4>👪 家庭出行补充</h4>
+                    <div class="transport-item"><span class="transport-name">上下船提醒</span><span class="transport-price">老人和宝宝建议选白天班次，避免夜间上下船不稳</span></div>
+                    <div class="transport-item"><span class="transport-name">行李建议</span><span class="transport-price">沙美岛码头到酒店可能要换小车或步行，尽量少带大箱子</span></div>
+                    <div class="transport-item"><span class="transport-name">午间安排</span><span class="transport-price">沙美岛遮阴少，11:30-15:00 尽量回酒店休息</span></div>
+                    <div class="transport-item"><span class="transport-name">支付方式</span><span class="transport-price">小店和码头更依赖现金，建议备足小额泰铢</span></div>
+                </div>
+                <div class="warning" style="margin-top:20px;">
+                    <div class="warning-title">⚠️ 沙美岛交通补充建议</div>
+                    <ul>
+                        <li>沙美岛更适合慢节奏度假，主打海滩放松，不建议每天都安排跳岛</li>
+                        <li>如果带 1 岁宝宝，外岛浮潜日最好只安排半天，下午回酒店休息</li>
+                        <li>码头、沙滩路和部分度假村台阶较多，婴儿车使用场景不如商场方便</li>
+                        <li>若风浪较大，优先改成海滩散步、酒店泳池、主街吃饭，不必强行出海</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🍜 沙美岛 - 当地特色美食</h2>
+                <div class="tips">
+                    <h3>推荐优先尝试</h3>
+                    <ul>
+                        <li><strong>炭烤海鲜：</strong> 沙美岛海边餐厅很多，推荐烤虾、烤鱼、烤鱿鱼</li>
+                        <li><strong>椰子冰沙：</strong> 海边消暑非常合适，但给宝宝喝建议少冰或不加冰</li>
+                        <li><strong>泰式炒河粉 Pad Thai：</strong> 接受度高，适合全家一起吃</li>
+                        <li><strong>青木瓜沙拉：</strong> 经典泰式风味，但通常偏辣，老人小孩慎点</li>
+                        <li><strong>海鲜炒饭：</strong> 沙滩餐厅常见，也比较稳妥，不容易踩雷</li>
+                    </ul>
+                </div>
+                <div class="tips" style="margin-top:20px;">
+                    <h3>📍 推荐觅食区域</h3>
+                    <ul>
+                        <li><strong>Ao Phrao / 日落海滩：</strong> 更适合海边晚餐和轻松看日落，氛围好</li>
+                        <li><strong>Vongdeuan Beach：</strong> 餐厅更集中，适合一边散步一边找吃的</li>
+                        <li><strong>沙美镇主街：</strong> 适合补给、简单正餐、买零食饮料，价格也通常更直观</li>
+                        <li><strong>酒店餐厅：</strong> 带宝宝时最稳，环境、卫生和座位舒适度通常更好</li>
+                    </ul>
+                </div>
+                <div class="tips" style="margin-top:20px;">
+                    <h3>👶 适合宝宝 / 长辈的点单清单</h3>
+                    <ul>
+                        <li>海鲜炒饭、鸡肉炒饭、Pad Thai</li>
+                        <li>烤鱼、烤虾、鸡肉串</li>
+                        <li>清炒时蔬、蛋包饭、煎蛋</li>
+                        <li>椰子水、香蕉奶昔（少冰）、水果拼盘</li>
+                    </ul>
+                </div>
+                <div class="warning" style="margin-top:20px;">
+                    <div class="warning-title">🍽️ 点餐建议</div>
+                    <ul>
+                        <li>海边餐厅风景好但等待时间可能偏长，带宝宝建议避开最热门的日落高峰</li>
+                        <li>午餐优先选简单熟食，外岛跳岛当天不要吃太刺激太油腻</li>
+                        <li>沙美岛部分餐厅选择不如普吉丰富，可备一些宝宝零食和常温奶</li>
+                        <li>如吃海鲜，优先选择现做、翻台快、评价好的店，减少肠胃风险</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🗓️ 沙美岛 - 详细行程</h2>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="day-title">📅 第1天（4月15日）- 出发日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">绍兴 → 杭州萧山机场</div></div></div>
+                        <div class="activity"><div class="activity-time">13:50</div><div class="activity-info"><div class="activity-name">杭州 → 曼谷</div></div></div>
+                        <div class="activity"><div class="activity-time">18:30</div><div class="activity-info"><div class="activity-name">曼谷 → 罗勇码头</div><div class="activity-desc">约1.5小时车程</div></div></div>
+                        <div class="activity"><div class="activity-time">20:00</div><div class="activity-info"><div class="activity-name">乘船前往沙美岛</div><div class="activity-desc">入住酒店</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第2天（4月16日）- 休闲适应日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">酒店海滩休闲</div><div class="activity-desc">适应环境</div></div></div>
+                        <div class="activity"><div class="activity-time">中午</div><div class="activity-info"><div class="activity-name">酒店午餐 / 午睡</div><div class="activity-desc">先适应海岛节奏，宝宝和老人都建议休息</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">日落海滩</div><div class="activity-desc">欣赏日落 📸，建议 16:00 后再出门更舒服</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第3天（4月17日）- 跳岛游</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">外岛跳岛游</div><div class="activity-desc">浮潜+沙滩，若风浪大可改为主岛海滩日</div></div></div>
+                        <div class="activity"><div class="activity-time">中午</div><div class="activity-info"><div class="activity-name">岛上午餐</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">沙美镇逛逛</div><div class="activity-desc">购买伴手礼，顺便补充饮用水和零食</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第4天（4月18日）- 海滩休闲</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">旺德暖海滩</div><div class="activity-desc">休闲放松，适合在海边餐厅慢慢坐着</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">泰式按摩</div><div class="activity-desc">放松 💆</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第5天（4月19日）- 全岛探索</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">环岛游览</div><div class="activity-desc">看岩石海岸，建议包车或短途接驳，不要久走</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">酒店泳池</div><div class="activity-desc">休闲</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第6天（4月20日）- 最后休闲</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">海滩活动</div><div class="activity-desc">最后享受</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">整理行李</div></div></div>
+                        <div class="activity"><div class="activity-time">傍晚</div><div class="activity-info"><div class="activity-name">乘船返回罗勇</div><div class="activity-desc">建议选择天黑前班次，带宝宝上下船更稳妥</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第7天（4月21日）- 曼谷购物</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">罗勇 → 曼谷机场</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">王权免税店 / Central World</div><div class="activity-desc">购物为主，避免再安排跨城景点</div></div></div>
+                        <div class="activity"><div class="activity-time">晚上</div><div class="activity-info"><div class="activity-name">机场酒店入住</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第8天（4月22日）- 返程日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">曼谷机场</div></div></div>
+                        <div class="activity"><div class="activity-time">13:30</div><div class="activity-info"><div class="activity-name">曼谷 → 杭州</div></div></div>
+                        <div class="activity"><div class="activity-time">晚上</div><div class="activity-info"><div class="activity-name">杭州 → 绍兴</div></div></div>
+                    </div></div>
+                </div>
+                <div class="warning" style="margin-top:20px;">
+                    <div class="warning-title">✅ 沙美岛行程优化建议</div>
+                    <ul>
+                        <li>沙美岛的核心优势是近、轻松、海水好，适合减少折腾，多留酒店和海滩时间</li>
+                        <li>如果长辈体力一般，跳岛游安排 1 次就够，其他天尽量围绕主海滩和酒店展开</li>
+                        <li>从码头到酒店的当天不建议再排夜间活动，先休息，第二天体验会更好</li>
+                        <li>若想拍照，日落海滩和傍晚主街都更适合在 16:00 以后安排</li>
+                    </ul>
+                </div>
+                <div class="tips" style="margin-top:20px;">
+                    <h3>🎒 沙美岛随身建议</h3>
+                    <ul>
+                        <li>带防水袋、轻便凉鞋、换洗衣物，码头上下船时很实用</li>
+                        <li>宝宝建议多带湿巾、一次性围兜和小零食，海边餐厅等待时间可能偏长</li>
+                        <li>海岛蚊虫较多，傍晚出门前提前喷驱蚊液</li>
+                        <li>如住海边木屋，晚上空调和热水情况建议入住时先确认</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 苏梅岛行程 -->
+        <div id="kohsum" class="tab-content">
+            <div class="section">
+                <h2 class="section-title">✈️ 苏梅岛 - 航班安排</h2>
+                <div class="warning">
+                    <div class="warning-title">⚠️ 苏梅岛航班注意事项</div>
+                    <ul>
+                        <li>苏梅岛机场是小型机场，航班较少且价格较贵</li>
+                        <li>也可选择先飞素叻他尼机场，再坐船约1.5小时到苏梅岛</li>
+                        <li>建议提前1个月预订机票，4月旺季容易满座</li>
+                    </ul>
+                </div>
+                <div class="flight-card">
+                    <h3>去程 - 4月15日</h3>
+                    <div class="flight-route">
+                        <div class="flight-point"><div class="time">13:50</div><div class="airport">杭州萧山(HGH)</div></div>
+                        <div class="flight-arrow">✈️</div>
+                        <div class="flight-point"><div class="time">17:20</div><div class="airport">曼谷素万那普(BKK)</div></div>
+                    </div>
+                </div>
+                <div class="flight-card">
+                    <h3>曼谷→苏梅岛 内飞</h3>
+                    <div class="flight-route">
+                        <div class="flight-point"><div class="time">19:30</div><div class="airport">曼谷素万那普(BKK)</div></div>
+                        <div class="flight-arrow">✈️</div>
+                        <div class="flight-point"><div class="time">20:30</div><div class="airport">苏梅岛(USM)</div></div>
+                    </div>
+                </div>
+                <div class="flight-card">
+                    <h3>回程 - 4月22日</h3>
+                    <div class="flight-route">
+                        <div class="flight-point"><div class="time">09:00</div><div class="airport">苏梅岛(USM)</div></div>
+                        <div class="flight-arrow">✈️</div>
+                        <div class="flight-point"><div class="time">10:00</div><div class="airport">曼谷素万那普(BKK)</div></div>
+                    </div>
+                    <div class="flight-route" style="margin-top:20px;">
+                        <div class="flight-point"><div class="time">13:30</div><div class="airport">曼谷素万那普(BKK)</div></div>
+                        <div class="flight-arrow">✈️</div>
+                        <div class="flight-point"><div class="time">18:30</div><div class="airport">杭州萧山(HGH)</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🏨 苏梅岛 - 推荐酒店</h2>
+                <div class="warning">
+                    <div class="warning-title">⚠️ 选酒店注意事项</div>
+                    <ul>
+                        <li>苏梅岛酒店价格较高，五星度假村较多</li>
+                        <li>查文海滩最热闹，拉迈海滩更安静</li>
+                        <li>建议选有中文服务的酒店，沟通更方便</li>
+                    </ul>
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-info">
+                        <div class="hotel-name">苏梅岛圣塔拉度假村 (Centara Reserve Samui)</div>
+                        <div class="hotel-tags"><span class="hotel-tag">亲子首选</span><span class="hotel-tag">儿童俱乐部</span><span class="hotel-tag">私人海滩</span></div>
+                        <div class="hotel-desc">✅ 位置：查文海滩<br>✅ 设施：儿童俱乐部、多个泳池<br>💰 预算：约800-1500元/晚</div>
+                        <div class="hotel-links">
+                            <a class="hotel-link" href="https://www.qunar.com/" target="_blank">去哪儿搜索</a>
+                            <a class="hotel-link" href="https://www.agoda.com/zh-cn/search?city=18170&textToSearch=Centara%20Reserve%20Samui" target="_blank">Agoda</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-info">
+                        <div class="hotel-name">苏梅岛喜来登度假村 (Sheraton Samui Resort)</div>
+                        <div class="hotel-tags"><span class="hotel-tag">五星豪华</span><span class="hotel-tag">海滨</span><span class="hotel-tag">SPA</span></div>
+                        <div class="hotel-desc">✅ 位置：查文海滩<br>✅ 设施：海滨泳池、SPA<br>💰 预算：约1000-2000元/晚</div>
+                        <div class="hotel-links">
+                            <a class="hotel-link" href="https://www.qunar.com/" target="_blank">去哪儿搜索</a>
+                            <a class="hotel-link" href="https://www.agoda.com/zh-cn/search?city=18170&textToSearch=Sheraton%20Samui%20Resort" target="_blank">Agoda</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🏝️ 苏梅岛 - 推荐景点</h2>
+                <div class="warning">
+                    <div class="warning-title">⚠️ 游玩注意事项</div>
+                    <ul>
+                        <li>涛岛浮潜需要乘船约1.5小时，老人可能较累</li>
+                        <li>苏梅岛更原生态，适合悠闲度假而非打卡景点</li>
+                        <li>大佛寺台阶较多，老人需注意</li>
+                    </ul>
+                </div>
+                <div class="spotlight">
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏖️ 查文海滩</div>
+                            <div class="spot-desc">最长最热闹，餐厅酒吧众多 | 👶推荐</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E6%9F%A5%E6%96%87%E6%B5%B7%E6%BB%A9" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏖️ 拉迈海滩</div>
+                            <div class="spot-desc">安静浪漫，祖父祖母石</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E6%8B%89%E8%BF%88%E6%B5%B7%E6%BB%A9" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🏝️ 涛岛</div>
+                            <div class="spot-desc">世界著名浮潜地 | ⚠️船程较远</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E6%B6%9B%E5%B2%9B" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                    <div class="spot-card">
+                        <div class="spot-info">
+                            <div class="spot-name">🛕 大佛寺</div>
+                            <div class="spot-desc">苏梅岛标志性景点 | ⚠️台阶多</div>
+                            <div class="spot-link-row"><a href="https://www.mafengwo.cn/search/s.php?q=%E8%8B%8F%E6%A2%85%E5%B2%9B%E5%A4%A7%E4%BD%9B%E5%AF%BA" target="_blank">马蜂窝查看</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🚕 苏梅岛 - 交通指南</h2>
+                <div class="transport-card">
+                    <h4>🚗 岛上交通</h4>
+                    <div class="transport-item"><span class="transport-name">出租车</span><span class="transport-price">价格较贵，建议谈价</span></div>
+                    <div class="transport-item"><span class="transport-name">双条车</span><span class="transport-price">约50-100泰铢/人</span></div>
+                    <div class="transport-item"><span class="transport-name">包车一日游</span><span class="transport-price">约2000-3000泰铢/天</span></div>
+                    <div class="transport-item"><span class="transport-name">机场接送</span><span class="transport-price">大多酒店可安排，带娃建议提前预约</span></div>
+                </div>
+                <div class="transport-card">
+                    <h4>🚤 离岛交通</h4>
+                    <div class="transport-item"><span class="transport-name">涛岛+南园岛一日游</span><span class="transport-price">约1500-2000泰铢/人</span></div>
+                    <div class="transport-item"><span class="transport-name">建议选择大船</span><span class="transport-price">更平稳</span></div>
+                    <div class="transport-item"><span class="transport-name">近距离海滩日</span><span class="transport-price">比天天出海更适合老人和宝宝</span></div>
+                </div>
+                <div class="transport-card">
+                    <h4>👪 家庭出行补充</h4>
+                    <div class="transport-item"><span class="transport-name">查文 vs 拉迈</span><span class="transport-price">查文热闹方便，拉迈更安静，带老人更适合慢住</span></div>
+                    <div class="transport-item"><span class="transport-name">午休安排</span><span class="transport-price">中午建议回酒店，苏梅岛紫外线也很强</span></div>
+                    <div class="transport-item"><span class="transport-name">山路提醒</span><span class="transport-price">部分观景点路段坡度较大，包车比自己折腾更省心</span></div>
+                    <div class="transport-item"><span class="transport-name">支付方式</span><span class="transport-price">商场餐厅可电子支付，小店和司机还是现金更稳</span></div>
+                </div>
+                <div class="warning" style="margin-top:20px;">
+                    <div class="warning-title">⚠️ 苏梅岛交通补充建议</div>
+                    <ul>
+                        <li>苏梅岛适合“海滩 + 酒店 + 轻景点”模式，不建议每天安排长船程项目</li>
+                        <li>涛岛一日游对老人和宝宝都偏累，如果家庭成员体力一般，可直接改成本岛休闲日</li>
+                        <li>机场虽小但旺季人不少，返程日仍建议提前 2 小时到达</li>
+                        <li>岛上路边拦车不如酒店代约稳定，尤其晚间、下雨或带宝宝时</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🍜 苏梅岛 - 当地特色美食</h2>
+                <div class="tips">
+                    <h3>推荐优先尝试</h3>
+                    <ul>
+                        <li><strong>椰子鸡汤 Tom Kha Gai：</strong> 比冬阴功更温和，带长辈更容易接受</li>
+                        <li><strong>泰式咖喱蟹 / 咖喱虾：</strong> 风味浓郁，适合多人分着吃</li>
+                        <li><strong>烤猪颈肉：</strong> 很多泰餐厅都有，口味偏香甜，适合作为稳妥主菜</li>
+                        <li><strong>芒果糯米饭：</strong> 苏梅岛水果甜度高，甜品值得试</li>
+                        <li><strong>海边早餐 / Brunch：</strong> 苏梅岛很适合安排一顿海景慢早餐，度假感更强</li>
+                    </ul>
+                </div>
+                <div class="tips" style="margin-top:20px;">
+                    <h3>📍 推荐觅食区域</h3>
+                    <ul>
+                        <li><strong>查文海滩：</strong> 选择最多，适合找海景餐厅、brunch、亲子友好餐厅</li>
+                        <li><strong>拉迈海滩：</strong> 更适合安静吃饭，节奏慢一些，适合带长辈</li>
+                        <li><strong>Central Festival 周边：</strong> 适合吹空调、补给、吃连锁和稳妥餐厅</li>
+                        <li><strong>海边餐吧：</strong> 适合傍晚吃饭看日落，但尽量提早去，避免排队</li>
+                    </ul>
+                </div>
+                <div class="tips" style="margin-top:20px;">
+                    <h3>👶 适合宝宝 / 长辈的点单清单</h3>
+                    <ul>
+                        <li>椰子鸡汤、清汤米粉、炒饭</li>
+                        <li>烤猪颈肉、蒸鱼、鸡蛋料理</li>
+                        <li>芒果糯米饭、吐司早餐、水果拼盘</li>
+                        <li>椰子水、温热汤类、少冰果昔</li>
+                    </ul>
+                </div>
+                <div class="warning" style="margin-top:20px;">
+                    <div class="warning-title">🍽️ 点餐建议</div>
+                    <ul>
+                        <li>苏梅岛热门海边餐厅晚上容易排队，带宝宝建议把正餐放在中午或傍晚前</li>
+                        <li>如果当天安排涛岛或长途出海，早餐和午餐都尽量清淡，避免晕船加重</li>
+                        <li>查文海滩周边选择最多，拉迈更适合安静慢慢吃饭</li>
+                        <li>水果、冰饮很诱人，但老人和宝宝尽量少冰，避免肠胃不适</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🗓️ 苏梅岛 - 详细行程</h2>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="day-title">📅 第1天（4月15日）- 出发日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">绍兴 → 杭州萧山机场</div></div></div>
+                        <div class="activity"><div class="activity-time">13:50</div><div class="activity-info"><div class="activity-name">杭州 → 曼谷</div></div></div>
+                        <div class="activity"><div class="activity-time">19:30</div><div class="activity-info"><div class="activity-name">曼谷 → 苏梅岛</div><div class="activity-desc">内飞约1小时</div></div></div>
+                        <div class="activity"><div class="activity-time">晚上</div><div class="activity-info"><div class="activity-name">入住查文海滩酒店</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第2天（4月16日）- 休闲适应日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">查文海滩休闲</div><div class="activity-desc">先以轻松活动为主，让长辈和宝宝适应</div></div></div>
+                        <div class="activity"><div class="activity-time">中午</div><div class="activity-info"><div class="activity-name">酒店午餐 / 午睡</div><div class="activity-desc">中午日晒强，建议固定休息</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">酒店泳池+海滩</div><div class="activity-desc">以酒店内活动为主，少折腾交通</div></div></div>
+                        <div class="activity"><div class="activity-time">傍晚</div><div class="activity-info"><div class="activity-name">查文海滩日落</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第3天（4月17日）- 拉迈海滩</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">拉迈海滩</div><div class="activity-desc">祖父祖母石，建议包车往返更轻松</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">阿公阿婆石</div><div class="activity-desc">拍照打卡 📸</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第4天（4月18日）- 涛岛一日游</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">涛岛+南园岛一日游</div><div class="activity-desc">⚠️船程约1.5小时，如前一晚休息不好建议取消改酒店休闲</div></div></div>
+                        <div class="activity"><div class="activity-time">中午</div><div class="activity-info"><div class="activity-name">岛上午餐</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">浮潜/沙滩</div></div></div>
+                        <div class="activity"><div class="activity-time">傍晚</div><div class="activity-info"><div class="activity-name">返回酒店</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第5天（4月19日）- 大佛寺+购物</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">大佛寺</div><div class="activity-desc">⚠️台阶多，老人注意，建议穿防滑凉鞋</div></div></div>
+                        <div class="activity"><div class="activity-time">中午</div><div class="activity-info"><div class="activity-name">当地餐厅午餐</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">Central Festival</div><div class="activity-desc">苏梅岛最大商场，适合补给和吹空调休息</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第6天（4月20日）- 全岛休闲</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">酒店休闲</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">SPA/按摩</div><div class="activity-desc">放松 💆</div></div></div>
+                        <div class="activity"><div class="activity-time">傍晚</div><div class="activity-info"><div class="activity-name">海滨日落</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第7天（4月21日）- 曼谷返程日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">酒店早餐</div></div></div>
+                        <div class="activity"><div class="activity-time">09:00</div><div class="activity-info"><div class="activity-name">苏梅岛 → 曼谷</div></div></div>
+                        <div class="activity"><div class="activity-time">下午</div><div class="activity-info"><div class="activity-name">王权免税店购物</div><div class="activity-desc">返程日前以购物和休整为主，不再安排景点</div></div></div>
+                        <div class="activity"><div class="activity-time">晚上</div><div class="activity-info"><div class="activity-name">机场酒店入住</div></div></div>
+                    </div></div>
+                    <div class="timeline-item"><div class="day-title">📅 第8天（4月22日）- 返程日</div><div class="day-content">
+                        <div class="activity"><div class="activity-time">上午</div><div class="activity-info"><div class="activity-name">曼谷机场</div></div></div>
+                        <div class="activity"><div class="activity-time">13:30</div><div class="activity-info"><div class="activity-name">曼谷 → 杭州</div></div></div>
+                        <div class="activity"><div class="activity-time">晚上</div><div class="activity-info"><div class="activity-name">杭州 → 绍兴</div></div></div>
+                    </div></div>
+                </div>
+                <div class="warning" style="margin-top:20px;">
+                    <div class="warning-title">✅ 苏梅岛行程优化建议</div>
+                    <ul>
+                        <li>苏梅岛更适合住得好、慢慢玩，亮点在度假感，不一定要天天跑景点</li>
+                        <li>涛岛适合年轻人和爱浮潜的人；如果以长辈和宝宝舒适为先，可直接改成查文或拉迈海滩休闲日</li>
+                        <li>大佛寺、商场、海滩这类轻松项目搭配起来，会比连续出海更均衡</li>
+                        <li>如果住查文海滩，吃饭和补给最方便；如果更重视安静，可优先拉迈周边酒店</li>
+                    </ul>
+                </div>
+                <div class="tips" style="margin-top:20px;">
+                    <h3>🎒 苏梅岛随身建议</h3>
+                    <ul>
+                        <li>准备薄外套、遮阳帽、防晒霜、凉鞋和随手补水杯</li>
+                        <li>出海日加带晕船药、手机防水袋、宝宝替换衣物和防水尿裤</li>
+                        <li>寺庙日建议穿方便脱鞋、不过于暴露的衣物</li>
+                        <li>苏梅岛餐厅选择多，但热门地段晚餐要排队，带宝宝尽量早一点吃</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">💡 出行建议</h2>
+            <div class="tips">
+                <h3>带娃+老人注意事项</h3>
+                <ul>
+                    <li>1岁宝宝建议携带婴儿推车（可托运），普吉岛很多台阶，抱娃会很累</li>
+                    <li>泰国紫外线强，必须给宝宝和老人准备防晒霜、遮阳帽</li>
+                    <li>老人不宜长时间坐快艇，建议选择大船或双体帆船</li>
+                    <li>每天行程安排轻松为主，避免赶时间</li>
+                    <li>泰国医疗条件不错，可带常用药品以防万一</li>
+                    <li>泰铢建议在国内换好，泰国商场可使用支付宝/微信</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">💰 预算参考</h2>
+            <div class="tips">
+                <ul>
+                    <li><strong>机票：</strong> 杭州-曼谷-海岛 往返约 3000-5000元/人</li>
+                    <li><strong>酒店：</strong> 海岛5晚 + 曼谷1晚 约 4000-8000元/家庭</li>
+                    <li><strong>一日游：</strong> 离岛游 约 800-1500元/人</li>
+                    <li><strong>餐饮：</strong> 8天约 1500-2500元/家庭</li>
+                    <li><strong>总计：</strong> 约 20000-35000元/家庭（5人）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>祝您和家人泰国之旅愉快！🇹🇭👨‍👩‍👧‍👦</p>
+            <p style="margin-top:10px; font-size:0.9em; opacity:0.8;">* 航班信息仅供参考，请以实际预订为准</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
